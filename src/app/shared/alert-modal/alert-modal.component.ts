@@ -21,4 +21,5 @@ export class AlertModalComponent implements OnInit {
     this.bsModalRef.hide();
   }
 
+
 }
