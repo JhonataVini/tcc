@@ -58,7 +58,7 @@ export abstract class BaseFormComponent implements OnInit {
   verificaEmailInvalido() {
     const campoEmail = this.formulario.get('email');
     if (campoEmail.errors) {
-      return campoEmail.errors['email'] && campoEmail.touched;
+      return campoEmail.errors.email && campoEmail.touched;
     }
   }
 

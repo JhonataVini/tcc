@@ -30,13 +30,6 @@ export class HomeComponent implements OnInit {
       distinctUntilChanged(),
       tap(value => console.log(value))
     ).subscribe();
-
-    if (this.authService.usuarioEstaAutenticado()) {
-      this.router.navigate(['/busca-reativa']);
-      return true;
-    }
-    this.router.navigate(['/login']);
-    return false;
   }
 
   onSearch() {

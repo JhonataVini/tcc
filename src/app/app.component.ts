@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
 
   mostrarMenu = false;
 
-  constructor(private authService: AuthService) {
+  constructor(public authService: AuthService) {
 
   }
 

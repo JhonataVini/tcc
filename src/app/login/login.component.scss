@@ -1,8 +1,9 @@
 /* fundo dos campos */
 .container {
-  position: fixed;
+  position: static;
   align-items: center;
   padding: 10em;
+  scroll-padding-left: unset;
 }
 
 /* campo de e-mail */
