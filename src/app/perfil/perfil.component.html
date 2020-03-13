@@ -1,1 +1,15 @@
-Teste do perfil
+<div *ngIf="perfil$ |async as perfil; else loading" ></div>
+<div *ngFor="let perfil of perfil$ |async" >
+  <p>{{perfil.id}}</p>
+  <p>{{perfil.nome}}</p>
+  <p>{{perfil.email}}</p>
+  <p>{{perfil.senha}}</p>
+  <div class="float-right">
+    <button type="button" class="btn btn-primary" [routerLink]="['novo']">Novo Curso</button>
+    <button type="button" class="btn btn-secondary">Atualizar</button>
+  </div>
+</div>
+<ng-template #loading>
+<span>Carregando Informações, por favor aguarde...</span>
+</ng-template>
+

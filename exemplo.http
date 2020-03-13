@@ -1,0 +1,25 @@
+http://localhost:3000/usuario
+
+#########
+GET  http://localhost:3000/usuario/2
+####
+
+POST http://localhost:3000/usuario HTTP/1.1
+content-type: application/json
+
+{
+  "nome": "email",
+  "email": "email@email.com",
+  "senha": 123456
+}
+
+#####
+PUT http://localhost:3000/usuario/2 HTTP/1.1
+content-type: application/json
+
+{
+  "email": "jhonatavini458@gmail.com",
+  "senha": 12345678
+}
+#####
+delete http://localhost:3000/usuario/3

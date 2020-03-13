@@ -1,0 +1,22 @@
+{
+  "usuario": [
+    {
+      "id": 1,
+      "nome": "Usuario",
+      "email": "usuario@email.com",
+      "senha": 123456
+    },
+    {
+      "nome": "Tocantins",
+      "email": "jhonatavini458@gmail.com",
+      "senha": 12345678,
+      "id": 2
+    },
+    {
+      "nome": "email",
+      "email": "email@email.com",
+      "senha": 123456,
+      "id": 3
+    }
+  ]
+}

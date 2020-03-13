@@ -1,3 +1,4 @@
+import { PerfilComponent } from './perfil/perfil.component';
 import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -10,11 +11,10 @@ const routes: Routes = [{
 },
 { path: 'login', component: LoginComponent},
 { path: 'home', component: HomeComponent},
- {
-   path: 'cadastro', component: FormComponent
- },
+{ path: 'cadastro', component: FormComponent},
+{ path: 'perfil', component: PerfilComponent},
 //  {
-//    path: 'upload',
+//    path: 'perfil',
 //   loadChildren: () => import('./upload-file/upload-file.module').then(m => m.UploadFileModule)
 //  },
 // //  {
