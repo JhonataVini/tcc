@@ -1,3 +1,4 @@
+import { Usuario } from './../login/usuario';
 import { Component, OnInit } from '@angular/core';
 import { FormVamlidation } from '../shared/form-validation';
 import { Validators, FormBuilder, FormControl, FormGroup } from '@angular/forms';
@@ -7,6 +8,7 @@ import { VerificaEmailService } from './services/verifica-email.service';
 import { BaseFormComponent } from '../shared/base-form/base-form.component';
 import { distinctUntilChanged, switchMap, tap, map } from 'rxjs/operators';
 import { empty } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -17,14 +19,21 @@ import { empty } from 'rxjs';
 export class FormComponent extends BaseFormComponent implements OnInit {
 
 // estados: Observable<EstadoBr[]>;
-
+usuario: any = {
+  nome: null,
+  email: null,
+  confirmaEmail: null,
+  senha: null,
+  confirmarSenha: null
+};
  constructor(
    private formBuilder: FormBuilder,
    private http: HttpClient,
    private dropdownService: DropdownService,
-   private verificaEmailService: VerificaEmailService
+   private verificaEmailService: VerificaEmailService,
+   private router: Router
    ) {
-     super( );
+     super();
    }
 
  ngOnInit() {
@@ -45,12 +54,11 @@ export class FormComponent extends BaseFormComponent implements OnInit {
 
    this.formulario = this.formBuilder.group({
      nome: [null, [Validators.required, Validators.minLength(3)]],
-     email: [null, [Validators.required, Validators.email], this.validarEmail.bind(this)],
+     email: [null, [Validators.required, Validators.email]],
      confirmarEmail: [null, [FormVamlidation.equalsTo('email')]],
      senha: [null, [Validators.required, Validators.minLength(8)]],
      confirmarSenha: [null, [FormVamlidation.equalsTo('senha')]],
-
-     termos: [null, Validators.pattern('true')],
+     termos: [null, Validators.pattern('true')]
    });
    }
 

@@ -1,25 +1,24 @@
-import { delay, tap } from 'rxjs/operators';
-import { PerfilService } from './perfil.service';
-import { Usuario } from './../login/usuario';
-import { Component, OnInit, Input } from '@angular/core';
-import { AuthService } from '../login/auth.service';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { catchError, delay, tap } from 'rxjs/operators';
+import { empty, Observable } from 'rxjs';
 import { Perfil } from './perfil';
-import { Observable } from 'rxjs';
+import { AlertModalService } from '../shared/alert-modal.service';
+import { PerfilService } from './perfil.service';
 
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
-  styleUrls: ['./perfil.component.scss'],
-  preserveWhitespaces: true
+  styleUrls: ['./perfil.component.scss']
 })
 export class PerfilComponent implements OnInit {
 
-   perfil: Perfil[];
+  perfil: Perfil[];
 
    perfil$: Observable<Perfil[]>;
 
-     constructor(private service: PerfilService) { }
+     constructor(
+       private alertService: AlertModalService,
+       private service: PerfilService) { }
 
   ngOnInit() {
   this.perfil$ = this.service.list()
@@ -28,7 +27,28 @@ export class PerfilComponent implements OnInit {
     tap(console.log)
   );
   }
+  handleError() {
+    this.alertService.showAlertDanger('Erro ao carregar cursos. Tente novamente mais tarde.');
+    // this.bsModalRef = this.modalService.show(AlertModalComponent);
+    // this.bsModalRef.content.type = 'danger';
+    // this.bsModalRef.content.message = 'Erro ao carregar cursos. Tente novamente mais tarde.';
+  }
+
+  onRefresh() {
+    this.perfil$ = this.service.list().pipe(
+      // map(),
+      // tap(),
+      // switchMap(),
+      catchError(error => {
+        console.error(error);
+        // this.error$.next(true);
+        this.handleError();
+        return empty();
+      })
+    );
 
 
+
+}
 
 }

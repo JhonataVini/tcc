@@ -1,4 +1,5 @@
 import { PerfilModule } from './perfil/perfil.module';
+
 import { HomeModule } from './home/home.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -12,12 +13,15 @@ import { AuthGuard } from './guards/auth-guard';
 import { AuthService } from './login/auth.service';
 import { FormComponent } from './form/form.component';
 import { SharedModule } from './shared/shared.module';
+import { PerfilComponent } from './perfil/perfil.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     FormComponent,
+
   ],
   imports: [
     FormsModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormArray } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-base-form',
@@ -38,7 +39,7 @@ export abstract class BaseFormComponent implements OnInit {
   }
 
   resetar() {
-    this.formulario.reset();
+    this.formulario.reset(['/home']);
   }
 
   verificaValidTouched(campo: string) {

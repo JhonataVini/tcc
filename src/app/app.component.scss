@@ -16,6 +16,27 @@ svg#rocket-smoke {
   right: 180px;
   z-index: -10;
 }
+.teste{
+  position: fixed;
+  height: 100%;
+  margin-left: -1em;
+  padding-right: -2em;
+  padding-bottom: -2em;
+  margin-top: -3em;
+}
+
+
+div.container {
+  max-width: 75%;
+    padding-left: 4em;
+}
+
+a{
+  color: white;
+}
+  a:hover{
+    color: white;
+  }
 
 
 svg#clouds {
@@ -31,17 +52,18 @@ svg#clouds {
 @media screen and (max-width: 767px) {
 
   .card-container > *:not(.circle-link) ,
-  .terminal {
-    width: 100%;
+  .teste{
+  position: fixed;
+  height: 100%;
+  margin-left: -1em;
+  padding-right: -2em;
+  padding-bottom: -2em;
+  margin-top: -3em;
   }
 
-  .card:not(.highlight-card) {
-    height: 16px;
-    margin: 8px 0;
-  }
-
-  .card.highlight-card span {
-    margin-left: 72px;
+  div.container {
+    max-width: 75%;
+    padding-left: 4em;
   }
 
   svg#rocket-smoke {
@@ -54,6 +76,20 @@ svg#clouds {
   svg#rocket-smoke {
     display: none;
     visibility: hidden;
+  }
+  .teste{
+    position: absolute;
+    max-width: 35%;
+    height: 100%;
+    margin-left: -1em;
+    padding-right: -2em;
+    padding-bottom: -2em;
+    margin-top: -3em;
+  }
+
+  div.container {
+    max-width: 75%;
+    padding-left: 4em;
   }
 }
 }

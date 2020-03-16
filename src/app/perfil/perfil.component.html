@@ -1,4 +1,4 @@
-<div *ngIf="perfil$ |async as perfil; else loading" ></div>
+ <div *ngIf="perfil$ |async as perfil; else loading" ></div>
 <div *ngFor="let perfil of perfil$ |async" >
   <p>{{perfil.id}}</p>
   <p>{{perfil.nome}}</p>
@@ -12,4 +12,3 @@
 <ng-template #loading>
 <span>Carregando Informações, por favor aguarde...</span>
 </ng-template>
-

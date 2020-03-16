@@ -1,21 +1,16 @@
-import { PerfilRoutingModule } from './perfil-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { PerfilRoutingModule } from './perfil-routing.module';
 import { PerfilComponent } from './perfil.component';
 import { PerfilFormComponent } from './perfil-form/perfil-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
-
 
 
 @NgModule({
-  declarations: [
-    PerfilComponent,
-    PerfilFormComponent,
-  ],
+  declarations: [PerfilComponent, PerfilFormComponent],
   imports: [
     CommonModule,
-    PerfilRoutingModule,
-    ReactiveFormsModule
+    PerfilRoutingModule
   ]
 })
 export class PerfilModule { }
