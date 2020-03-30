@@ -12,7 +12,7 @@
       </div>
       <div class="col-2">
         <button type="button" class="btn btn-success " (click)="onSearch()"
-        ><span class="fas fa-search"></span> Pesquisar</button>
+        >Pesquisar</button>
       </div>
     </div>
   </div>
@@ -25,12 +25,14 @@
         <tr>
           <th>Nome</th>
           <th>Versão</th>
+          <th>Homepage</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let result of results$ | async">
           <td>{{ result.name }}</td>
           <td>{{ result.version }}</td>
+          <td>{{ result.homepage }}</td>
         </tr>
       </tbody>
     </table>
